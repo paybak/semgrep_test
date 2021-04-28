@@ -1,0 +1,13 @@
+rules:
+  - id: test_rules
+    languages:
+      - java
+    message: >
+      Should not compare strings with ' == ' 
+    patterns: 
+      - pattern: if(< ... $VAR ... >)
+      - pattern-inside: |
+          public void $FUNC(...){
+            ...
+          }
+    severity: WARNING
